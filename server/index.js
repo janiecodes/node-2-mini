@@ -8,6 +8,8 @@ app.use(express.json());
 
 //ENDPOINTS
 app.get('/api/books', bc.read)
+app.post('/api/books', bc.create)
+app.put('/api/books/:id', bc.update)
 
 const port = 4000;
 
