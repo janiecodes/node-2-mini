@@ -25,5 +25,10 @@ module.exports = {
             author: req.body.author || books[index].author
         }
         res.status(200).send(books)
+    },
+    delete: (req, res) => {
+        let index = books.findIndex(elem => elem.id === +req.params.id);
+        books.splice(index, 1);
+        res.status(200).send(books);
     }
 }
